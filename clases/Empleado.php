@@ -1,17 +1,17 @@
 <?php
 
-class Empleado
+abstract class Empleado
 {
-    private $nombre;
-    private $apellido;
-    private $numeroSeguridadSocial;
+    private string $nombre;
+    private string $apellido;
+    private string $numeroSeguridadSocial;
 
     /**
      * @param string $nombre "El nombre del empleado"
      * @param string $apellido
      * @param string $numeroSeguridadSocial
      */
-    public function __construct($nombre, $apellido, $numeroSeguridadSocial)
+    public function __construct(string $nombre, string $apellido, string $numeroSeguridadSocial)
     {
         $this->nombre = $nombre;
         $this->apellido = $apellido;
@@ -21,7 +21,7 @@ class Empleado
     /**
      * @return string
      */
-    public function getNombre()
+    public function getNombre(): string
     {
         return $this->nombre;
     }
@@ -29,7 +29,7 @@ class Empleado
     /**
      * @param string $nombre
      */
-    public function setNombre($nombre)
+    public function setNombre(string $nombre)
     {
         $this->nombre = $nombre;
     }
@@ -37,7 +37,7 @@ class Empleado
     /**
      * @return string
      */
-    public function getApellido()
+    public function getApellido(): string
     {
         return $this->apellido;
     }
@@ -45,7 +45,7 @@ class Empleado
     /**
      * @param string $apellido
      */
-    public function setApellido($apellido)
+    public function setApellido(string $apellido)
     {
         $this->apellido = $apellido;
     }
@@ -53,7 +53,7 @@ class Empleado
     /**
      * @return string
      */
-    public function getNumeroSeguridadSocial()
+    public function getNumeroSeguridadSocial(): string
     {
         return $this->numeroSeguridadSocial;
     }
@@ -61,19 +61,16 @@ class Empleado
     /**
      * @param string $numeroSeguridadSocial
      */
-    public function setNumeroSeguridadSocial($numeroSeguridadSocial)
+    public function setNumeroSeguridadSocial(string $numeroSeguridadSocial)
     {
         $this->numeroSeguridadSocial = $numeroSeguridadSocial;
     }
 
-    public function mostrar() {
-        return "Empleado { 
-            Nombre: ".$this->nombre.",<br>
-            Apellido: ".$this->apellido.",<br>
-            Numero SS: ".$this->numeroSeguridadSocial."<br>
-            }";
+    public function mostrar(): string
+    {
+        return "Empleado: nombre: ".$this->nombre.", apellido: ".$this->apellido.", numero SS: ".$this->numeroSeguridadSocial . " ";
     }
 
-//    public abstract function ingresos();
+    public abstract function ingresos();
 
 }

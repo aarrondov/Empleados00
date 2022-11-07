@@ -1,4 +1,5 @@
 <?php
 include "clases/Empleado.php";
-$emp = new Empleado("Aritz","Arrondo","0057-8112");
-echo $emp -> mostrar();
+include_once "clases/EmpleadoPlantilla.php";
+$empPl = new EmpleadoPlantilla("Aritz","Arrondo","00587112",2250,150);
+echo $empPl -> mostrar();
