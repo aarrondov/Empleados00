@@ -62,6 +62,4 @@ class EmpleadoPlantilla extends Empleado
     {
         return $this->sueldo + $this->dietas;
     }
-
-
 }
